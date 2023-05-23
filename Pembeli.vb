@@ -28,7 +28,6 @@ Public Class Pembeli
     End Sub
     Private Sub pembeli_Load() Handles MyBase.Load
         views("")
-        Login_Copy.login(ToolStripStatusLabel1, ToolStripStatusLabel2, ToolStripStatusLabel3)
         Login_Copy.Tampilriwayat(gridriwayat, 0)
         Login_Copy.insidetools(False, True, pesanan)
         gridriwayat.RowHeadersVisible = False

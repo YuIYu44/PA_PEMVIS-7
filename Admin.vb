@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class Admin
     Private Sub manajemen_akun_Load() Handles Me.Load
-        Login_Copy.login(ToolStripStatusLabel1, ToolStripStatusLabel2, ToolStripStatusLabel3)
+        Login_Copy.login(ToolStripStatusLabel1)
         Login_Copy.noeditplace(Me)
         connect()
     End Sub
@@ -24,6 +24,7 @@ Public Class Admin
         akun.Columns(5).ReadOnly = True
         Login_Copy.Tampilriwayat(laporan, 1)
         laporan.RowHeadersVisible = False
+        Login_Copy.logos(My.Resources.admin, Me.logo)
     End Sub
     Private Sub manajemen_akun_closed(sender As Object, e As EventArgs) Handles Me.Closed
         Login_Copy.Show()
@@ -68,5 +69,4 @@ Public Class Admin
             MsgBox("Tutorial.txt tidak ada dalam folder")
         End If
     End Sub
-
 End Class

@@ -47,10 +47,6 @@ Partial Class Pembeli
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtnama = New System.Windows.Forms.TextBox()
         Me.label = New System.Windows.Forms.Label()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.pembeli_control.SuspendLayout()
@@ -60,7 +56,6 @@ Partial Class Pembeli
         CType(Me.gridriwayat, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.profilepage.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'pembeli_control
@@ -306,35 +301,6 @@ Partial Class Pembeli
         Me.label.TabIndex = 0
         Me.label.Text = "Nama"
         '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 440)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(607, 25)
-        Me.StatusStrip1.TabIndex = 2
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(153, 20)
-        Me.ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Visible = False
-        '
-        'ToolStripStatusLabel2
-        '
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(153, 20)
-        Me.ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
-        '
-        'ToolStripStatusLabel3
-        '
-        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(153, 20)
-        Me.ToolStripStatusLabel3.Text = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Visible = False
-        '
         'ImageList1
         '
         Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
@@ -350,7 +316,6 @@ Partial Class Pembeli
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(607, 465)
-        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.pembeli_control)
         Me.Name = "Pembeli"
         Me.Text = "Menu"
@@ -363,10 +328,7 @@ Partial Class Pembeli
         Me.profilepage.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -379,10 +341,6 @@ Partial Class Pembeli
     Friend WithEvents pesanan As DataGridView
     Friend WithEvents riwayat As TabPage
     Friend WithEvents gridriwayat As DataGridView
-    Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
     Friend WithEvents btntutorial As Button
     Friend WithEvents profilepage As TabPage
     Friend WithEvents GroupBox1 As GroupBox

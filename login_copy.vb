@@ -17,6 +17,12 @@ Public Class Login_Copy
         Next
         insidetools(bools, bools2, grid)
     End Sub
+
+    Public Sub logos(logo1 As Image, place As PictureBox)
+        place.Image = logo1
+        place.SizeMode = PictureBoxSizeMode.StretchImage
+    End Sub
+
     Public Sub insidetools(bools As Boolean, bools2 As Boolean, grid As DataGridView)
         grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         grid.AutoGenerateColumns = False
@@ -28,9 +34,9 @@ Public Class Login_Copy
     End Sub
     Public Sub Tampilriwayat(grid As DataGridView, Jenis As Integer)
         If Jenis = 1 Then
-            DA = New MySqlDataAdapter("Select id_terbeli, nama_barang, jumlah_barang, total, pembeli, penjual From terbeli", CONN)
+            DA = New MySqlDataAdapter("Select id_terbeli, nama_barang, jumlah_barang, total, pembeli, Username From terbeli INNER JOIN akun on terbeli.penjual=akun.id_akun", CONN)
         ElseIf Jenis = 2 Then
-            DA = New MySqlDataAdapter("Select id_terbeli, nama_barang, jumlah_barang, total, pembeli From terbeli where penjual = '" & id_login & "'", CONN)
+            DA = New MySqlDataAdapter("Select id_terbeli, nama_barang, jumlah_barang, total, Username From terbeli INNER JOIN akun on terbeli.pembeli=akun.id_akun where penjual = '" & id_login & "'", CONN)
         Else
             DA = New MySqlDataAdapter("Select nama_barang, jumlah_barang, total, Username From terbeli INNER JOIN akun on terbeli.penjual=akun.id_akun where pembeli = " & id_login, CONN)
         End If
@@ -59,8 +65,7 @@ Public Class Login_Copy
     End Sub
     Public Sub noeditplace(forms As Form)
         forms.Icon = My.Resources.bike1
-        forms.BackgroundImage = My.Resources.bike
-        forms.BackgroundImageLayout = BackgroundImageLayout.Stretch
+        forms.BackColor = Color.DimGray
         forms.MaximizeBox = False
         forms.MinimizeBox = False
         forms.AutoSizeMode = False
@@ -75,10 +80,8 @@ Public Class Login_Copy
             ctl.SelectedItem = Nothing
         Next
     End Sub
-    Public Sub login(tl1 As ToolStripLabel, tl2 As ToolStripLabel, tl3 As ToolStripLabel)
-        tl1.Text = id_login
+    Public Sub login(tl2 As ToolStripLabel)
         tl2.Text = text
-        tl3.Text = status_
     End Sub
     Public Function error_string(items As Array, kind As Integer)
         Dim ints As Integer
@@ -193,6 +196,8 @@ Public Class Login_Copy
         End If
     End Sub
     Private Sub Login_Copy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        logo_show.Show()
+        logos(My.Resources.login, logo)
         noeditplace(Me)
         koneksi()
         connect()

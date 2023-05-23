@@ -3,13 +3,14 @@ Imports MySql.Data.MySqlClient
 Public Class Penjual
     Dim image_file As String
     Private Sub Penjual_Load() Handles Me.Load
-        Login_Copy.login(ToolStripStatusLabel1, ToolStripStatusLabel2, ToolStripStatusLabel3)
+        Login_Copy.login(ToolStripStatusLabel1)
         Login_Copy.Tampilsepeda(barang, True, False, " id_sepeda,nama_sepeda,harga ,total,gambar from sepeda", (" where id_penjual = " & Login_Copy.id_login))
         Login_Copy.noeditplace(Me)
         barang.RowHeadersVisible = False
         Login_Copy.Tampilriwayat(gridlaporan, 2)
         btnclear_Click()
         pb.SizeMode = PictureBoxSizeMode.StretchImage
+        Login_Copy.logos(My.Resources.shop, Me.logo)
     End Sub
     Private Sub closed(sender As Object, e As EventArgs) Handles MyBase.FormClosed
         Login_Copy.Show()

@@ -30,14 +30,16 @@ Partial Class Admin
         Me.laporan = New System.Windows.Forms.DataGridView()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.logo = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
         Me.manajemenakun.SuspendLayout()
         CType(Me.akun, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.laporanpembelian.SuspendLayout()
         CType(Me.laporan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
+        CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -102,38 +104,47 @@ Partial Class Admin
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 432)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(585, 25)
+        Me.StatusStrip1.Size = New System.Drawing.Size(835, 25)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'ToolStripStatusLabel1
         '
+        Me.ToolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(153, 20)
         Me.ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
         '
-        'ToolStripStatusLabel2
+        'logo
         '
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(153, 20)
-        Me.ToolStripStatusLabel2.Text = "ToolStripStatusLabel2"
+        Me.logo.BackColor = System.Drawing.Color.Transparent
+        Me.logo.Location = New System.Drawing.Point(588, 129)
+        Me.logo.Name = "logo"
+        Me.logo.Size = New System.Drawing.Size(207, 178)
+        Me.logo.TabIndex = 3
+        Me.logo.TabStop = False
         '
-        'ToolStripStatusLabel3
+        'PictureBox1
         '
-        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(153, 20)
-        Me.ToolStripStatusLabel3.Text = "ToolStripStatusLabel3"
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
+        Me.PictureBox1.Location = New System.Drawing.Point(397, 40)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(416, 376)
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
         '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(585, 457)
-        Me.Controls.Add(Me.StatusStrip1)
+        Me.ClientSize = New System.Drawing.Size(835, 457)
         Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.logo)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Name = "Admin"
         Me.Text = "Admin"
         Me.TabControl1.ResumeLayout(False)
@@ -143,6 +154,8 @@ Partial Class Admin
         CType(Me.laporan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -155,7 +168,7 @@ Partial Class Admin
     Friend WithEvents laporan As DataGridView
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
     Friend WithEvents btntutorial As Button
+    Friend WithEvents logo As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
