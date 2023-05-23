@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports Microsoft.VisualBasic.Devices
 Imports MySql.Data.MySqlClient
 
 Public Class Admin
@@ -29,7 +30,7 @@ Public Class Admin
     Private Sub manajemen_akun_closed(sender As Object, e As EventArgs) Handles Me.Closed
         Login_Copy.Show()
     End Sub
-    Private Sub gridvalues(sender As Object, e As DataGridViewCellEventArgs) Handles akun.CellEndEdit
+    Private Sub gridvalues(sender As Object, e As DataGridViewCellEventArgs) Handles akun.CellValueChanged
         Dim idx = sender.CurrentCell.RowIndex
         If Login_Copy.error_string({sender.rows(idx).cells(2).value, sender.rows(idx).cells(3).value, sender.rows(idx).cells(4).value}, 1) = 0 Then
             If sender.rows(idx).cells(2).value.Length > 5 Then
